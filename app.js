@@ -1,22 +1,17 @@
-const input = document.querySelector('input');
-const buttons = document.querySelectorAll('.buttons button');
+const input = document.querySelector('.display');
+const buttons = document.querySelectorAll('.calculator-buttons button');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.textContent;
 
-        if (value === 'C') {
-            input.value = '';
-        } else if (value === '<') {
-            input.value = input.value.slice(0, -1);
-        } else if (value === '+/-') {
-            if (input.value) {
-                input.value = String(-parseFloat(input.value));
-            }
-        } else if (value === '=') {
-            input.value = eval(input.value.replace('%', '/100'));
-        } else {
-            input.value += value;
+        switch (value) {
+            case 'C':   input.value = ''; break;
+            case '<':   input.value = input.value.slice(0, -1); break;
+            case '+/-': input.value = String(-parseFloat(input.value)); break;
+            case '=':   input.value = eval(input.value); break;
+            case '%':   input.value = eval(input.value) / 100; break;
+            default:    input.value += value; break;
         }
     });
 });

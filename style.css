@@ -17,8 +17,8 @@ body {
     height: 100vh;
 }
 
-input[type="text"] {
-    width: 270px;
+input.display {
+    width: 272px;
     height: 50px;
     margin-bottom: 20px;
     text-align: right;
@@ -29,17 +29,18 @@ input[type="text"] {
     background-color: #fff;
 }
 
-.buttons {
+.calculator-buttons {
     display: flex;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
-    width: 320px;
+    width: 270px;
 }
 
-button {
+.calculator-buttons button {
     width: 60px;
     height: 60px;
+    flex: 60px;
     font-size: 25px;
     background-color: #1677ff;
     color: white;
@@ -47,18 +48,6 @@ button {
     cursor: pointer;
 }
 
-button:nth-child(1) {
-    background-color: #e74c3c;
-}
-
-button:nth-child(2) {
-    background-color: #f39c12;
-}
-
-button:nth-child(3) {
-    background-color: #2ecc71;
-}
-
-button:nth-child(20) {
+.calculator-buttons button.action-button {
     background-color: #8e44ad;
 }
